@@ -1,8 +1,7 @@
 Mail-Dadi
 ===
 ## Mail <br>
-Chiedi all’utente la sua email,
-controlla che sia nella lista di chi può accedere, stampa un messaggio appropriato sull’esito del controllo.
+Chiedi all’utente la sua email, controlla che sia nella lista di chi può accedere, stampa un messaggio appropriato sull’esito del controllo.
 ## Svolgimento
 1. Prompt email utente + variabile dove salvarla
 2. Creo una lista di utenti autorizzati
