@@ -1,36 +1,44 @@
 // Creo un array con la lista utenti autorizzati
 const listaUtenti = ['pincopallo@gmail.com', 'lucabianchi@libero.it', 'federicorossi@gmail.com']
 
-document.addEventListener('DOMContentLoaded', function(){
+const mail = document.getElementById('email');
+const btn = document.getElementById('bottone');
 
-// Chiedo all'utente di inserire la mail
+btn.addEventListener('click', function(){
 
-let eMail = prompt ('Inserisci la tua email');
-
-// Controllo presenza mail nell'elenco
-// Dichiaro la costante che mi servirà a verificare la presenza della mail
-let mailFind;
-for(let i = 0; i < listaUtenti.length; i++){
-    if(eMail === listaUtenti[i]){
-        mailFind = true;
-        let risposta = document.getElementById('output');
-        risposta.innerHTML += `
-        <p>Accesso consentito !</p>
-        `
-        break; // Necessario per far fermare il ciclo
+    for(let i = 0; i < listaUtenti.length; i++){
+        if(mail.value == listaUtenti[i]){
+            document.getElementById('accesso').innerHTML = 'Accesso consentito !';
+            i = listaUtenti.length;
+        }
+        else{
+            document.getElementById('accesso').innerHTML = 'Accesso negato !';
+        }
     }
-    else {
-        mailFind = false;
-        let risposta = document.getElementById('output');
-        risposta.innerHTML += `
-        <p>Accesso negato !</p>
-        `
-        break; // Necessario per far fermare il ciclo
-    }
-}
-
 })
 
 
 // DADI
 
+let giocatore = Math.floor(Math.random()*6)+1;
+
+let pc = Math.floor(Math.random()*6)+1;
+
+console.log(giocatore, pc);
+
+document.getElementById('giocatore').innerHTML = giocatore;
+document.getElementById('pc').innerHTML = pc;
+
+
+if(giocatore > pc){
+    document.getElementById('risultato').innerHTML = 'Ha vinto il giocatore !'
+    console.log('Ha vinto il giocatore!');
+}
+else if(giocatore < pc){
+    document.getElementById('risultato').innerHTML = 'Ha vinto il pc !'
+    console.log('Ha vinto il pc!');
+}
+else{
+    document.getElementById('risultato').innerHTML = 'Parità !'
+    console.log('Parità!');
+}
