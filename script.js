@@ -17,7 +17,7 @@ for(let i = 0; i < listaUtenti.length; i++){
         risposta.innerHTML += `
         <p>Accesso consentito !</p>
         `
-        break;
+        break; // Necessario per far fermare il ciclo
     }
     else {
         mailFind = false;
@@ -25,11 +25,12 @@ for(let i = 0; i < listaUtenti.length; i++){
         risposta.innerHTML += `
         <p>Accesso negato !</p>
         `
-        break;
+        break; // Necessario per far fermare il ciclo
     }
 }
 
 })
 
 
+// DADI
 
